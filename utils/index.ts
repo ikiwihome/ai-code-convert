@@ -89,9 +89,13 @@ export const OpenAIStream = async (
   const system = { role: 'system', content: prompt };
 	
   // use openai 
-  const url = "https://openai-2zn.pages.dev/api/v1/chat/completions";
+  const url = "https://api.openai.com/v1/chat/completions";
   const key = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
   const model = "gpt-3.5-turbo-16k";
+  // use cloudflare proxy, please create by yourself
+  // const url = "https://openai-2zn.pages.dev/api/v1/chat/completions";
+  // const key = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+  // const model = "gpt-3.5-turbo-16k";
   // use fake
   // const url = "https://ai.fakeopen.com/v1/chat/completions";
   // const key = "pk-this-is-a-real-free-pool-token-for-everyone";
