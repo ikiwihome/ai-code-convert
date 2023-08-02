@@ -184,7 +184,7 @@ export default function Home() {
           {loading
             ? '别着急，AI正在根据您的要求生成代码...'// Generating
             : hasTranslated
-              ? '已复制到剪贴板!'
+              ? '复制到剪贴板!'
               : '选择语言类型并输入自然语言文字或者代码，然后点击 "生成" 按钮'}
         </div>
 

@@ -12,7 +12,7 @@ export const LanguageSelect: FC<Props> = ({ language, onChange }) => {
 
   return (
     <div className="flex justify-center items-center">
-      <span className="mr-2 w-1/10">选择语言类型 :</span>
+      <span className="mr-2 w-1/10">选择语言 :</span>
       <select
         className="flex-1 rounded-md bg-[#1F2937] px-4 py-2 text-neutral-200"
         value={language}

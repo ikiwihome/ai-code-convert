@@ -31,7 +31,7 @@ export const CodeBlock: FC<Props> = ({
         className="absolute right-0 top-0 z-10 rounded bg-[#1A1B26] p-1 text-xs text-white hover:bg-[#2D2E3A] active:bg-[#2D2E3A]"
         onClick={() => {
           navigator.clipboard.writeText(code);
-          setCopyText('已复制到剪贴板!');
+          setCopyText('复制到剪贴板!');
         }}
       >
         {copyText}
