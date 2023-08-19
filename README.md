@@ -76,19 +76,11 @@ Visual Basic .NET
 git clone https://github.com/ikiwihome/ai-code-convert.git
 ```
 
-**. Change key**
+**. Config Environment**
 
-```bash
-请将 utils/index.ts 文件中的 OpenAI API URL 更改为您自己的URL，推荐使用cloudflare代理，这样就可以不用翻墙访问OpenAI的API。
-```
-
-or
-```bash
-创建一个名为 .env.local 的文件，并将对应的值替换为您的密钥，API Key以sk-开头。
-
-NEXT_PUBLIC_OPENAI_API_KEY=XXXXXX
-
-```
+1. 将 .env.local.example 更名为 .env.local
+2. 将 .env.local.example 文件中的 NEXT_PUBLIC_OPENAI_API_BASE_URL，NEXT_PUBLIC_OPENAI_MODEL，NEXT_PUBLIC_OPENAI_API_KEY 更改为您自己的
+3. NEXT_PUBLIC_OPENAI_API_BASE_URL 推荐使用cloudflare代理，这样就可以不用翻墙访问OpenAI的API。
 
 ![](README_files/2.jpg)
 
@@ -103,13 +95,14 @@ npm i
 **3. Run App**
 
 ```bash
-npm run dev
+npm run dev 或 npm run start
 ```
 
 ## 一键Docker部署
 ```bash
-docker run -d --name ai-code-convert -h ai-code-convert --restart=unless-stopped -e TZ="Asia/Shanghai" ikiwicc/ai-code-convert:latest
+docker run -d --name ai-code-convert -h ai-code-convert --restart=unless-stopped -e TZ="Asia/Shanghai" -e NEXT_PUBLIC_OPENAI_MODEL="gpt-3.5-turbo" -e NEXT_PUBLIC_OPENAI_API_BASE_URL="https://openai-2zn.pages.dev/api/v1/chat/completions" -e NEXT_PUBLIC_OPENAI_API_KEY="sk-xxxxx" ikiwicc/ai-code-convert:latest
 ```
+其中NEXT_PUBLIC_OPENAI_API_KEY换成你自己的key
 然后通过IP地址+端口号即可访问，例如：http://127.0.0.1:3000
 
 ## 源码修改后Docker镜像构建
